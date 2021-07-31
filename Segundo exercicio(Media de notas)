@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main(void) 
+{
+/*----------Declaração das variaveis----------*/
+    float e_notas[3], s_media;
+    int e_trabalhos, e_continuar_calculando;
+/*--------------------------------------------*/
+
+/*----------Pergunta e recolhe o valor das notas da prova P1 e P2----------*/
+    printf("Olá, pode começar a digitar as notas na seguinte ordem: P1 e P2\n");
+    printf("digite a nota da prova P1 aqui: ");
+    scanf("%f", &e_notas[0]);
+    printf("\nAgora digite a nota da P2 aqui: ");
+    scanf("%f", &e_notas[1]);
+/*-------------------------------------------------------------------------*/
+
+    s_media = (e_notas[0] * 0.3) + (e_notas[1] * 0.5);//linha que realiza a equação da qual gera a nota do aluno.
+
+/*----------Exibe media atual do aluno e pergunta se ele tem nota de trabalho----------*/
+    printf("A nota do aluno até agora é de: %.1f", s_media);
+    printf("\nO aluno tem alguma nota de trabalho?\tSe sim digite 1 e se não digite 0\nDigite aqui: ");
+    scanf("%i", &e_trabalhos);
+/*-------------------------------------------------------------------------------------*/
+
+/*----------Realiza a lógica para para realizar a média com nota de trabalho do aluno----------*/
+    if (e_trabalhos == 1)
+    {
+        printf("Ok agora digite a nota de trabalho aqui: ");
+        scanf("%f", &e_notas[2]);
+
+        s_media = (e_notas[2] * 0.2) + s_media;
+        
+        printf("A media do aluno foi de: %f", s_media);
+        printf("\nGostaria de continuar calculando? Se sim digite 1 e se não digite 0.\t");
+        scanf("%i", &e_continuar_calculando);
+
+      if(e_continuar_calculando == 1)
+        {
+            return main();
+        }else { return 0; }
+}
+/*--------------------------------------------------------------------------------------------*/
+    else//E aqui para quando o aluno não tem nota de trabalho
+    { 
+        printf("Tudo bem, a media do aluno se mantem em: %.1f", s_media);
+        printf("\nGostaria de continuar calculando? Se sim digite 1 e se não digite 0.\t");
+        scanf("%i", &e_continuar_calculando);
+
+       if(e_continuar_calculando == 1)
+        {
+            return main();
+        }else  { return 0; }
+    }
+return 0;
+}
