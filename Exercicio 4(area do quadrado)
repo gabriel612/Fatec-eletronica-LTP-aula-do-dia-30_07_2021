@@ -2,17 +2,21 @@
 
 int main(void) 
 {
-    float e_base, e_altura, s_area, e_continuar;
+    float e_base, e_altura, s_area, e_continuar;//declaração das variaveis
 
+/*----------Pergunta e recolhe a base e a altura do quadrado----------*/
     printf("Olá, por favor digite a base e a altura do quadrado neste respectiva ordem\tBase: ");
     scanf("%f", &e_base);
     printf("\tAltura: ");
     scanf("%f", &e_altura);
+/*--------------------------------------------------------------------*/
+   
+    s_area = e_base * e_altura;//linha que faz o calculo da base
 
-    s_area = e_base * e_altura;
-
+/*----------Apresenta ao usuário o valor da area e pergunta se ele quer continuar a executar o programa----------*/
     printf("\nA area do quadrado é de: %.2f Deseja fazer outra vez? Se sim digite 1 e se não digite 0\n digite aqui: ", s_area);
     scanf("%f", &e_continuar);
+/*---------------------------------------------------------------------------------------------------------------*/
 
-    if(e_continuar == 1) return main(); else return 0;
+    if(e_continuar == 1) return main(); else return 0;//Verifica se o usuário vai querer ou não continuar
 }
