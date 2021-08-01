@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void) 
+{
+    float e_ms, s_km, e_continuar;//declaração das variaveis 
+
+/*----------Pergunta e recolhe o valor da velocidade----------*/
+    printf("Olá, digite a sua velocidade em m/s aqui: ");
+    scanf("%f", &e_ms);
+/*------------------------------------------------------------*/
+    
+    s_km = e_ms * 3.6;//Linha que realiza a operação que calcula a velocidade em km
+
+/*----------Mostra a velocidade em km para o usuário e pergunta se ele quer continuar a calcular----------*/
+    printf("\nSua velocidade em Km/h é de: %.2f", s_km);
+    printf("\nGostaria de continuar? Se sim digite 1 e se não digite 0 bem aqui: ");
+    scanf("%f", &e_continuar);
+/*--------------------------------------------------------------------------------------------------------*/
+    
+    if (e_continuar == 1)//Linha que verifica se o usuário deseja ou não continuar a executar o programa
+    {
+        return main();
+    } else return 0;
+return 0;
+}
