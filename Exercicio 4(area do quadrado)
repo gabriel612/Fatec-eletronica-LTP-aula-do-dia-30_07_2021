@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void) 
+{
+    float e_base, e_altura, s_area, e_continuar;
+
+    printf("Olá, por favor digite a base e a altura do quadrado neste respectiva ordem\tBase: ");
+    scanf("%f", &e_base);
+    printf("\tAltura: ");
+    scanf("%f", &e_altura);
+
+    s_area = e_base * e_altura;
+
+    printf("\nA area do quadrado é de: %.2f Deseja fazer outra vez? Se sim digite 1 e se não digite 0\n digite aqui: ", s_area);
+    scanf("%f", &e_continuar);
+
+    if(e_continuar == 1) return main(); else return 0;
+}
