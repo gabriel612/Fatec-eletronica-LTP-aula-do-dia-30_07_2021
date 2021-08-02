@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(void) 
+{
+/*----------Declaração das variaveis----------*/
+    float e_tensao, e_corrente;
+    float e_continuar, s_resistencia;
+/*--------------------------------------------*/
+
+/*----------Pergunta e recolhe os valores de tensao e corrente----------*/
+    printf("Olá, por favor digite o valor da tensao aqui: ");
+    scanf("%f", &e_tensao);
+    printf("\nAgora digite o valor da corrente aqui: ");
+    scanf("%f", &e_corrente);
+/*----------------------------------------------------------------------*/
+    
+    s_resistencia = e_tensao / e_corrente;//linha que faz o calcula e obtém o valor da resistencia
+
+/*----------Mostra o valor da resistencia ao usuário e pergunta se ele deseja continuar a rodar o programa----------*/
+    printf("\nO valor da resitência é de: %f", s_resistencia);
+    printf("\nDeseja continuar? Digite 1 para sim, e 0 para nao, digite aqui: ");
+    scanf("%f", &e_continuar);
+/*------------------------------------------------------------------------------------------------------------------*/
+    
+    if (e_continuar == 1) return main(); else return 0;//linha que confere se o usuário deseja continuar
+}
