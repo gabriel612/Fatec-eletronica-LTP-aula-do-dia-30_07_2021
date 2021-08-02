@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(void) 
+{
+/*----------Declarção das variaveis----------*/
+    float e_res1, e_res2;
+    float s_res_total, e_continuar;
+/*-------------------------------------------*/
+
+/*----------Pergunta e recolhe o valor das resistências----------*/
+    printf("Olá, por favor entre o valor da primeira resistência aqui: ");
+    scanf("%f", &e_res1);
+    printf("\tagora o da resistência 2: ");
+    scanf("%f", &e_res2);
+/*---------------------------------------------------------------*/    
+    
+    s_res_total = 1 / (1 / e_res1) + (1 / e_res2);//linha que faz o calculo da resistência em série
+
+/*----------Apresenta o valor para usuário e pergunta se ele deseja fazer o calculo novamente----------*/
+    printf("\nO valaor da resitência total é de: %.2f", s_res_total);
+    printf("\nDeseja continuar? Digite 1 para sim e 0 para não: ");
+    scanf("%f", &e_continuar);
+/*-----------------------------------------------------------------------------------------------------*/
+
+    if (e_continuar == 1) return main(); else return 0;//linha que confere se o usuário vai querer continuar ou não
+}
